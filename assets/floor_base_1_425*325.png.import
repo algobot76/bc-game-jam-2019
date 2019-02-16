@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/iso_tile green.png-ef1c147531d740f19627a58b9140606e.stex"
+path="res://.import/floor_base_1_425*325.png-b01ef21730075ecb1c7dc62834d2c7c8.stex"
 
 [deps]
 
-source_file="res://tileset/iso_tile green.png"
-dest_files=[ "res://.import/iso_tile green.png-ef1c147531d740f19627a58b9140606e.stex" ]
+source_file="res://assets/floor_base_1_425*325.png"
+dest_files=[ "res://.import/floor_base_1_425*325.png-b01ef21730075ecb1c7dc62834d2c7c8.stex" ]
 
 [params]
 
