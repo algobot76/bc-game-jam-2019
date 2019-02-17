@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal died
+
 const SPEED = 300
 const R_MINUS = 1
 
@@ -54,5 +56,4 @@ func _physics_process(delta):
 
 func _on_Energy_energy_changed(energy):
 	if energy == 0:
-		get_tree().paused = true
-		get_node(paths.GAME_OVER_PATH).show()
+		emit_signal('died')
