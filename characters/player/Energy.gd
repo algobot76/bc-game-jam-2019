@@ -13,3 +13,7 @@ func take_damage(amount):
 	if energy < 0:
 		energy = 0
 	emit_signal('energy_changed', energy)
+	
+func recover(amount):
+	energy += amount
+	emit_signal('energy_changed', energy)
