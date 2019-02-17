@@ -1,10 +1,11 @@
-[gd_resource type="TileSet" load_steps=6 format=2]
+[gd_resource type="TileSet" load_steps=7 format=2]
 
 [ext_resource path="res://assets/floor_base_1.png" type="Texture" id=1]
 [ext_resource path="res://assets/floor_light blue.png" type="Texture" id=2]
 [ext_resource path="res://assets/floor_tall.png" type="Texture" id=3]
 [ext_resource path="res://assets/floor_yellow.png" type="Texture" id=4]
 [ext_resource path="res://assets/stairs_base_v1.png" type="Texture" id=5]
+[ext_resource path="res://pillar.png" type="Texture" id=6]
 
 [resource]
 
@@ -53,4 +54,13 @@
 4/occluder_offset = Vector2( 206, 272 )
 4/navigation_offset = Vector2( 206, 272 )
 4/shapes = [  ]
+5/name = "Pillar"
+5/texture = ExtResource( 6 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 111, 491 )
+5/is_autotile = false
+5/occluder_offset = Vector2( 55.5, 245.5 )
+5/navigation_offset = Vector2( 55.5, 245.5 )
+5/shapes = [  ]
 
