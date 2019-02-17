@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://tilesets/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://levels/Exit.gd" type="Script" id=2]
@@ -19,6 +19,18 @@ b = Vector2( -77.1856, 62.9051 )
 custom_solver_bias = 0.0
 a = Vector2( -110.248, -15.1176 )
 b = Vector2( 55.9494, 98.1755 )
+
+[sub_resource type="SegmentShape2D" id=6]
+
+custom_solver_bias = 0.0
+a = Vector2( 111.267, -19.35 )
+b = Vector2( -47.3674, 57.1385 )
+
+[sub_resource type="SegmentShape2D" id=7]
+
+custom_solver_bias = 0.0
+a = Vector2( -53.5608, -52.6189 )
+b = Vector2( 93.2505, 30.6844 )
 
 [node name="Level_1" type="Node2D" index="0"]
 
@@ -88,11 +100,47 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall_2" index="0"]
 
 position = Vector2( 1920.82, 201.756 )
 scale = Vector2( 17.4598, 12.2324 )
 shape = SubResource( 5 )
+
+[node name="Wall_3" type="StaticBody2D" parent="Walls" index="2"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall_3" index="0"]
+
+position = Vector2( -1458.2, 265.198 )
+scale = Vector2( 13.0776, 12.6707 )
+shape = SubResource( 6 )
+
+[node name="Wall_4" type="StaticBody2D" parent="Walls" index="3"]
+
+position = Vector2( -434.224, 1686.79 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall_4" index="0"]
+
+position = Vector2( -559.134, 170.892 )
+scale = Vector2( 19.6801, 16.1055 )
+shape = SubResource( 7 )
 
 
