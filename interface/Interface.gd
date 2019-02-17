@@ -4,9 +4,11 @@ onready var paths = preload("res://Paths.gd")
 
 func _ready():
     var player = get_node(paths.PLAYER)
-    player.get_node('Energy').connect('energy_changed', self, '_on_Energy_energy_changed')
+    var energy_node = player.get_node('Energy')
+    energy_node.connect('energy_changed', self, '_on_Energy_energy_changed')
+    $EnergyBar.initialize(energy_node.max_energy)
 
 
 func _on_Energy_energy_changed(energy):
-    print('Energy: ', energy)
+    $EnergyBar.display_energy(energy)
     pass

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://interface/Interface.gd" type="Script" id=1]
+[ext_resource path="res://interface/bar/EnergyBar.tscn" type="PackedScene" id=2]
 
 [node name="Interface" type="Control"]
 
@@ -17,5 +18,12 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
+
+[node name="EnergyBar" parent="." index="0" instance=ExtResource( 2 )]
+
+margin_left = 572.0
+margin_top = 28.0
+margin_right = 972.0
+margin_bottom = 81.0
 
 
