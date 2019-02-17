@@ -12,7 +12,7 @@ config_version=3
 
 config/name="BC Game Jam 2019"
 run/main_scene="res://Game.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/player_base.png"
 
 [display]
 
