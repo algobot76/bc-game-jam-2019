@@ -14,9 +14,12 @@ var script_paths = [
 	{'path': "res://Foods/Chips.gd", 'img':'res://Foods/imgs/food/6.png'},
  ]
 
+onready var paths = preload("res://Paths.gd")
+
+onready var tiles = get_node('/root/Game/Level_1/Grid')
+
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
+	var tiles_array = tiles.get_used_cells()
 	var num = 10
 	while num > 0:
 		num -= 1
@@ -26,7 +29,8 @@ func _ready():
 		food.set_script(load(script_elem['path']))
 		food.get_node('Sprite').texture = load(script_elem['img'])
 		food.get_node('Sprite').set_scale(Vector2(0.5,0.5))
-		food.position.x = rand_range(100, 1400)
-		food.position.y = rand_range(100, 1400)
+		var tile = tiles.map_to_world(tiles_array[randi() % tiles_array.size()])
+		food.position.x = tile.x
+		food.position.y = tile.y
 		self.add_child(food)
 

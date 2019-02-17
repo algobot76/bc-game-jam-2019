@@ -6,7 +6,6 @@ onready var player = get_node(paths.PLAYER)
 
 const RUN_SPEED = 100
 const WALK_SPEED = 60
-const R_MINUS = 1
 const RADIUS = 150
 const CATCH = 80
 const PATROL_RANGE = 100
@@ -14,6 +13,7 @@ const PATROL_RANGE = 100
 var motion = Vector2()
 var buffer = 15
 var cur_pos = null
+
 
 
 func chase(detect_range, distance):
@@ -44,7 +44,6 @@ func chase(detect_range, distance):
 		motion.y = 0
 		motion.x = 0
 
-
 func patrol():
 	if cur_pos == null or cur_pos.distance_to(self.position) > PATROL_RANGE:
 		$AnimatedSprite.play('walk')
@@ -69,3 +68,4 @@ func _physics_process(delta):
 		patrol()
 
 	motion = move_and_slide(motion)
+

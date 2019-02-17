@@ -55,7 +55,6 @@ _sections_unfolded = [ "Transform" ]
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 2 )
 animation = "walk"
-frame = 3
 playing = true
 _sections_unfolded = [ "Transform" ]
 
