@@ -11,7 +11,7 @@
 [ext_resource path="res://interface/win/Win.tscn" type="PackedScene" id=9]
 [ext_resource path="res://GameTimer.gd" type="Script" id=10]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
@@ -38,13 +38,10 @@ margin_bottom = 317.0
 
 [node name="Level_1" parent="." index="1" instance=ExtResource( 3 )]
 
-editor/display_folded = true
 position = Vector2( 4.6272, 0 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Guards" type="Node" parent="Level_1" index="1"]
-
-editor/display_folded = true
 
 [node name="BasicGuard" parent="Level_1/Guards" index="0" groups=[
 "Guards",
