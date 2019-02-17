@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player_anim_1.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/player_anim_4.png" type="Texture" id=5]
 [ext_resource path="res://assets/player_anim_5.png" type="Texture" id=6]
 [ext_resource path="res://assets/player_anim_6.png" type="Texture" id=7]
+[ext_resource path="res://characters/player/Energy.gd" type="Script" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -42,7 +43,7 @@ position = Vector2( 7.15531, 2.45627 )
 scale = Vector2( 0.917975, 0.955893 )
 frames = SubResource( 1 )
 animation = "glow"
-frame = 3
+frame = 5
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -78,5 +79,8 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 
 [node name="Energy" type="Node" parent="." index="3"]
+
+script = ExtResource( 8 )
+max_energy = 10
 
 
