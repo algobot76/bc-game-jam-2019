@@ -1,35 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://u-g-F92LU50.jpg" type="Texture" id=1]
+[ext_resource path="res://dialogs/GameOnver.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/Level_1.tscn" type="PackedScene" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
-[ext_resource path="res://guard/basic_guard.gd" type="Script" id=4]
-[ext_resource path="res://guard/stronger_guard.gd" type="Script" id=5]
-[ext_resource path="res://Player.gd" type="Script" id=6]
-
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
-
-[sub_resource type="RectangleShape2D" id=2]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
-
-[sub_resource type="SpriteFrames" id=3]
-
-animations = [ {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=4]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+[ext_resource path="res://characters/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://characters/BasicGuard.tscn" type="PackedScene" id=4]
+[ext_resource path="res://characters/StrongerGuard.tscn" type="PackedScene" id=5]
 
 [node name="Game" type="Node" index="0"]
 
@@ -39,300 +14,30 @@ __meta__ = {
 "_edit_vertical_guides_": [  ]
 }
 
-[node name="GameOver" type="PopupDialog" parent="." index="0"]
+[node name="GameOver" parent="." index="0" instance=ExtResource( 1 )]
 
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -0.974243
-margin_top = -0.975281
-margin_right = 39.0258
-margin_bottom = 39.0247
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-popup_exclusive = true
-_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Popup", "Rect", "Visibility" ]
-
-[node name="Sprite" type="Sprite" parent="GameOver" index="0"]
-
-position = Vector2( 300, 300 )
-z_index = 1
-texture = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 39.0
+margin_bottom = 39.0
 
 [node name="Level_1" parent="." index="1" instance=ExtResource( 2 )]
 
-[node name="walls" type="Node2D" parent="Level_1" index="1"]
-
-editor/display_folded = true
-visible = false
-position = Vector2( 317.659, 107.829 )
-scale = Vector2( 0.645206, 0.646551 )
-_sections_unfolded = [ "Material", "Visibility" ]
-
-[node name="wall6" type="StaticBody2D" parent="Level_1/walls" index="0"]
-
-editor/display_folded = true
-position = Vector2( 811.422, 384.178 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level_1/walls/wall6" index="0"]
-
-position = Vector2( -69.5153, -7.31786 )
-scale = Vector2( 4.27358, 3.78736 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="Level_1/walls/wall6" index="1"]
-
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -69.5537, -5.35399 )
-scale = Vector2( 1.34229, 1.29011 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Visibility" ]
-
-[node name="wall2" type="StaticBody2D" parent="Level_1/walls" index="1"]
-
-editor/display_folded = true
-position = Vector2( 553.267, 222.499 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level_1/walls/wall2" index="0"]
-
-position = Vector2( -69.5153, -7.31786 )
-scale = Vector2( 4.27358, 3.78736 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="Level_1/walls/wall2" index="1"]
-
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -69.5537, -5.35399 )
-scale = Vector2( 1.34229, 1.29011 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Visibility" ]
-
-[node name="wall5" type="StaticBody2D" parent="Level_1/walls" index="2"]
-
-editor/display_folded = true
-position = Vector2( 724.927, 385.509 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level_1/walls/wall5" index="0"]
-
-position = Vector2( -69.5153, -7.31786 )
-scale = Vector2( 4.27358, 3.78736 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="Level_1/walls/wall5" index="1"]
-
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -69.5537, -5.35399 )
-scale = Vector2( 1.34229, 1.29011 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Visibility" ]
-
-[node name="wall4" type="StaticBody2D" parent="Level_1/walls" index="3"]
-
-position = Vector2( 638.432, 385.509 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level_1/walls/wall4" index="0"]
-
-position = Vector2( -69.5153, -7.31786 )
-scale = Vector2( 4.27358, 3.78736 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="Level_1/walls/wall4" index="1"]
-
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -69.5537, -5.35399 )
-scale = Vector2( 1.34229, 1.29011 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Visibility" ]
-
-[node name="wall3" type="StaticBody2D" parent="Level_1/walls/wall4" index="2"]
-
-position = Vector2( -85.83, -0.665009 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level_1/walls/wall4/wall3" index="0"]
-
-position = Vector2( -69.5153, -7.31786 )
-scale = Vector2( 4.27358, 3.78736 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="Level_1/walls/wall4/wall3" index="1"]
-
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -69.5537, -5.35399 )
-scale = Vector2( 1.34229, 1.29011 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Visibility" ]
-
-[node name="wall1" type="StaticBody2D" parent="Level_1/walls/wall4" index="3"]
-
-editor/display_folded = true
-position = Vector2( -85.83, -81.838 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level_1/walls/wall4/wall1" index="0"]
-
-position = Vector2( -69.5153, -7.31786 )
-scale = Vector2( 4.27358, 3.78736 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="Level_1/walls/wall4/wall1" index="1"]
-
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -69.5537, -5.35399 )
-scale = Vector2( 1.34229, 1.29011 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Visibility" ]
-
-[node name="guards" type="Node2D" parent="Level_1" index="2"]
-
-editor/display_folded = true
-position = Vector2( 349.844, 92.6513 )
-scale = Vector2( 0.645206, 0.646551 )
-
-[node name="Guard" type="KinematicBody2D" parent="Level_1/guards" index="0"]
-
-position = Vector2( -702.852, 1614.02 )
-scale = Vector2( 1.13768, 1.13499 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level_1/guards/Guard" index="0"]
-
-position = Vector2( -0.0893555, -0.772338 )
-scale = Vector2( 3, 3 )
-shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Sprite" type="Sprite" parent="Level_1/guards/Guard" index="1"]
+[node name="Player" parent="Level_1" index="1" instance=ExtResource( 3 )]
 
-texture = ExtResource( 3 )
+position = Vector2( 1484.26, 1656.93 )
 
-[node name="Guard2" type="KinematicBody2D" parent="Level_1/guards" index="1"]
+[node name="Guards" type="Node" parent="Level_1" index="2"]
 
-position = Vector2( 53.0557, 1751.34 )
-scale = Vector2( 1.15529, 1.26552 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="BasicGuard" parent="Level_1/Guards" index="0" instance=ExtResource( 4 )]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level_1/guards/Guard2" index="0"]
+position = Vector2( 1208.71, 1792.86 )
 
-position = Vector2( -0.0893555, -1.06819 )
-scale = Vector2( 3.45913, 3.36594 )
-shape = SubResource( 2 )
+[node name="StrongerGuard" parent="Level_1/Guards" index="1" instance=ExtResource( 5 )]
 
-[node name="Sprite" type="Sprite" parent="Level_1/guards/Guard2" index="1"]
-
-texture = ExtResource( 3 )
-
-[node name="player" type="KinematicBody2D" parent="Level_1" index="3"]
-
-position = Vector2( 164.032, 904.318 )
-scale = Vector2( 0.881984, 0.87382 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
-script = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Level_1/player" index="0"]
-
-position = Vector2( -0.111938, 3.32474 )
-scale = Vector2( 1.27136, 1 )
-frames = SubResource( 3 )
-animation = "walk"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level_1/player" index="1"]
-
-position = Vector2( -1.465, 4.96029 )
-scale = Vector2( 4.20006, 3.62477 )
-shape = SubResource( 4 )
-
-[node name="Camera2D" type="Camera2D" parent="Level_1/player" index="2"]
-
-anchor_mode = 1
-rotating = false
-current = true
-zoom = Vector2( 1, 1 )
-limit_left = -10000000
-limit_top = -10000000
-limit_right = 10000000
-limit_bottom = 10000000
-limit_smoothed = false
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = false
-smoothing_speed = 5.0
-offset_v = 0.0
-offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
-editor_draw_screen = true
-editor_draw_limits = false
-editor_draw_drag_margin = false
+position = Vector2( 1259.01, 1259.01 )
 
 

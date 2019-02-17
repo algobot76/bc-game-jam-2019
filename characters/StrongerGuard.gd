@@ -1,17 +1,19 @@
 extends KinematicBody2D
 
-onready var util = preload("res://Utils.gd")
-onready var player = get_node(util.PLAYER)
-const RUN_SPEED = 100
+onready var utils = preload("res://Utils.gd")
+onready var paths = preload("res://Paths.gd")
+onready var player = get_node(paths.PLAYER)
+
+const RUN_SPEED = 130
 const WALK_SPEED = 60
-const R_MINUS = 1
-const RADIUS = 100
+const RADIUS = 150
 const CATCH = 80
 const PATROL_RANGE = 100
 
 var motion = Vector2()
 var buffer = 15
 var cur_pos = null
+
 
 func chase(detect_range, distance):
 	var p_pos_x = player.position.x
@@ -38,15 +40,14 @@ func chase(detect_range, distance):
 	if is_on_wall():
 		motion.y = 0
 		motion.x = 0
-		
-		
+
 func patrol():
 	if cur_pos == null or cur_pos.distance_to(self.position) > PATROL_RANGE:
 		motion.y = rand_range(-1,1)
 		motion.x = rand_range(-1,1)
 		motion = motion.normalized() * WALK_SPEED
 		cur_pos = self.position
-		
+
 
 func _physics_process(delta):
 	var detect_range = player.get('invisibility') + RADIUS
@@ -55,7 +56,8 @@ func _physics_process(delta):
 		chase(detect_range, distance)
 	else:
 		patrol()
+		
 	if abs(distance) <= CATCH:
 		get_tree().paused = true
-		get_node(util.GAME_OVER_PATH).show()
+		get_node(paths.GAME_OVER_PATH).show()
 	motion = move_and_slide(motion)
