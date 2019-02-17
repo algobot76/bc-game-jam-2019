@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://interface/Interface.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/Level_1.tscn" type="PackedScene" id=2]
@@ -8,8 +8,9 @@
 [ext_resource path="res://interface/pause/Pause.tscn" type="PackedScene" id=6]
 [ext_resource path="res://interface/game_over/GameOver.tscn" type="PackedScene" id=7]
 [ext_resource path="res://interface/win/Win.tscn" type="PackedScene" id=8]
+[ext_resource path="res://interface/start/StartMenu.tscn" type="PackedScene" id=9]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" index="0"]
 
 _sections_unfolded = [ "Pause" ]
 __meta__ = {
@@ -19,6 +20,7 @@ __meta__ = {
 
 [node name="InterfaceLayer" type="CanvasLayer" parent="." index="0"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -35,6 +37,7 @@ margin_bottom = 317.0
 
 [node name="Level_1" parent="." index="1" instance=ExtResource( 2 )]
 
+editor/display_folded = true
 position = Vector2( 4.6272, 0 )
 _sections_unfolded = [ "Transform" ]
 
@@ -58,6 +61,7 @@ position = Vector2( 1510.09, 1508.61 )
 
 [node name="PauseLayer" type="CanvasLayer" parent="." index="2"]
 
+editor/display_folded = true
 layer = 2
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -70,6 +74,7 @@ visible = false
 
 [node name="GameOverLayer" type="CanvasLayer" parent="." index="3"]
 
+editor/display_folded = true
 layer = 3
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -82,6 +87,7 @@ visible = false
 
 [node name="WinLayer" type="CanvasLayer" parent="." index="4"]
 
+editor/display_folded = true
 layer = 4
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -91,5 +97,15 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 [node name="Win" parent="WinLayer" index="0" instance=ExtResource( 8 )]
 
 visible = false
+
+[node name="StartLayer" type="CanvasLayer" parent="." index="5"]
+
+layer = 5
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="StartMenu" parent="StartLayer" index="0" instance=ExtResource( 9 )]
 
 
