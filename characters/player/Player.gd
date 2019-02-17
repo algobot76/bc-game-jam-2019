@@ -49,7 +49,6 @@ func _physics_process(delta):
 	if collision:
 		if collision.collider.is_in_group('Guards'):
 			knockback_direction = utils.cartesian_to_isometric((collision.collider.global_position - self.global_position).normalized())
-			print(knockback_direction.x, ',', knockback_direction.y)
 			$Tween.interpolate_property(self, 'position', position, position + knockback * -knockback_direction, knockback_duration, Tween.TRANS_QUAD, Tween.EASE_OUT)
 			$Tween.start()
 			$Energy.take_damage(1)
