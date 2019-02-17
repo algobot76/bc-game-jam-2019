@@ -54,6 +54,11 @@ func patrol():
 
 
 func _physics_process(delta):
+	if utils.flip_anim(get_angle_to(player.global_position)):
+		$AnimatedSprite.flip_h = true
+	else:
+		$AnimatedSprite.flip_h = false
+
 	var detect_range = player.get('invisibility') + RADIUS
 	var distance = player.position.distance_to(self.position)
 	if distance <= detect_range:

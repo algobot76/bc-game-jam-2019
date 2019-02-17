@@ -32,7 +32,7 @@ animations = [ {
 "speed": 8.0
 } ]
 
-[node name="StrongerGuard" type="KinematicBody2D" index="0"]
+[node name="StrongerGuard" type="KinematicBody2D"]
 
 scale = Vector2( 1.15529, 1.26552 )
 input_pickable = false
@@ -56,7 +56,6 @@ shape = SubResource( 3 )
 scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 2 )
 animation = "walk"
-frame = 2
 playing = true
 _sections_unfolded = [ "Transform" ]
 
