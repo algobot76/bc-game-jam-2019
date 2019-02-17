@@ -23,7 +23,7 @@ animations = [ {
 custom_solver_bias = 0.0
 radius = 15.8007
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 position = Vector2( -3.37484, -44.8762 )
 scale = Vector2( 0.982773, 0.817962 )
@@ -40,6 +40,7 @@ position = Vector2( 7.15531, 2.45627 )
 scale = Vector2( 0.917975, 0.955893 )
 frames = SubResource( 1 )
 animation = "glow"
+frame = 2
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -54,7 +55,7 @@ shape = SubResource( 2 )
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 1, 1 )
+zoom = Vector2( 2.2, 2.2 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
