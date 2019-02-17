@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
-onready var player = get_node('/root/Node/Player')
+onready var player = get_node('/root/Node/Level_1/Player')
+onready var vec_converter = preload("res://Utils.gd")
 const RUN_SPEED = 100
 const WALK_SPEED = 60
 const R_MINUS = 1
@@ -53,6 +54,6 @@ func _physics_process(delta):
 		chase(detect_range, distance)
 	else:
 		patrol()
-	motion = move_and_slide(motion)
+	motion = move_and_slide(vec_converter.cartesian_to_isometric(motion))
 		
 		

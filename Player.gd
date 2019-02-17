@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-onready var player = get_node('/root/Node/Player')
 const SPEED = 300
 const R_MINUS = 1
 
