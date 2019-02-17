@@ -23,7 +23,7 @@ animations = [ {
 custom_solver_bias = 0.0
 radius = 17.273
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 position = Vector2( 0.211498, -43.9796 )
 scale = Vector2( 0.982773, 0.817962 )
@@ -43,7 +43,7 @@ position = Vector2( 7.15531, 2.45627 )
 scale = Vector2( 0.917975, 0.955893 )
 frames = SubResource( 1 )
 animation = "glow"
-frame = 4
+frame = 3
 playing = true
 _sections_unfolded = [ "Transform" ]
 
