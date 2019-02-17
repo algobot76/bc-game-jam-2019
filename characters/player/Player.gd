@@ -7,6 +7,7 @@ const R_MINUS = 1
 
 onready var utils = preload("res://Utils.gd")
 onready var paths = preload("res://Paths.gd")
+onready var timer = get_node(paths.TIMER)
 
 var motion = Vector2()
 var speed = 100
@@ -19,7 +20,7 @@ var knockback_direction = Vector2()
 
 func _ready():
 	$Energy.connect('energy_changed', self, '_on_Energy_energy_changed')
-
+	timer.connect('timer_changed', self, '_on_Timer_timer_changed')
 
 func move():
 	if Input.is_key_pressed(KEY_D):
@@ -57,3 +58,7 @@ func _physics_process(delta):
 func _on_Energy_energy_changed(energy):
 	if energy == 0:
 		emit_signal('died')
+
+
+func _on_Timer_timer_changed():
+	$Energy.take_damage(0.2)

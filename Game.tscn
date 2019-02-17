@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://interface/Interface.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://interface/pause/Pause.tscn" type="PackedScene" id=7]
 [ext_resource path="res://interface/game_over/GameOver.tscn" type="PackedScene" id=8]
 [ext_resource path="res://interface/win/Win.tscn" type="PackedScene" id=9]
+[ext_resource path="res://GameTimer.gd" type="Script" id=10]
 
 [node name="Game" type="Node"]
 
@@ -21,7 +22,6 @@ __meta__ = {
 
 [node name="InterfaceLayer" type="CanvasLayer" parent="." index="0"]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -115,6 +115,7 @@ process_mode = 1
 wait_time = 100.0
 one_shot = true
 autostart = true
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="TimerLayer/GameTimer" index="0"]
 
