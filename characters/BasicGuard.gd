@@ -28,16 +28,16 @@ func chase(detect_range, distance):
 		motion.x = -1
 	else:
 		motion.x = 0
-		
+
 	if p_pos_y - buffer > self_pos_y:
 		motion.y = 1
 	elif p_pos_y + buffer < self_pos_y:
-		motion.y = -1	
+		motion.y = -1
 	else:
-		motion.y = 0	
-	
+		motion.y = 0
+
 	motion = motion.normalized() * RUN_SPEED
-	
+
 	if is_on_wall():
 		motion.y = 0
 		motion.x = 0
@@ -58,8 +58,5 @@ func _physics_process(delta):
 		chase(detect_range, distance)
 	else:
 		patrol()
-	if abs(distance) <= CATCH:
-		get_tree().paused = true
-		get_node(paths.GAME_OVER_PATH).show()
 
 	motion = move_and_slide(motion)

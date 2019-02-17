@@ -28,13 +28,15 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Guards" type="Node" parent="Level_1" index="1"]
 
-editor/display_folded = true
-
-[node name="BasicGuard" parent="Level_1/Guards" index="0" instance=ExtResource( 3 )]
+[node name="BasicGuard" parent="Level_1/Guards" index="0" groups=[
+"Guards",
+] instance=ExtResource( 3 )]
 
 position = Vector2( 1208.71, 1792.86 )
 
-[node name="StrongerGuard" parent="Level_1/Guards" index="1" instance=ExtResource( 4 )]
+[node name="StrongerGuard" parent="Level_1/Guards" index="1" groups=[
+"Guards",
+] instance=ExtResource( 4 )]
 
 position = Vector2( 1259.01, 1259.01 )
 
