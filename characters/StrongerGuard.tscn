@@ -12,10 +12,11 @@
 [ext_resource path="res://assets/guard_walk_4.png" type="Texture" id=10]
 [ext_resource path="res://assets/guard_walk_5.png" type="Texture" id=11]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 30.1236, 55.5723 )
+radius = 10.0
+height = 24.9816
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -46,15 +47,17 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( -0.0893555, -1.06819 )
-scale = Vector2( 3.45913, 3.36594 )
-shape = SubResource( 1 )
+position = Vector2( -0.0893555, 23.8924 )
+scale = Vector2( 3.45913, 4.64528 )
+shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
 
+scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 2 )
 animation = "walk"
-frame = 1
+frame = 2
 playing = true
+_sections_unfolded = [ "Transform" ]
 
 
