@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/floor_base_1_425*325.png-b01ef21730075ecb1c7dc62834d2c7c8.stex"
+path="res://.import/pillar.png-b1bb7f0d83019ae69ac14eb27feb16b0.stex"
 
 [deps]
 
-source_file="res://assets/floor_base_1_425*325.png"
-dest_files=[ "res://.import/floor_base_1_425*325.png-b01ef21730075ecb1c7dc62834d2c7c8.stex" ]
+source_file="res://assets/pillar.png"
+dest_files=[ "res://.import/pillar.png-b1bb7f0d83019ae69ac14eb27feb16b0.stex" ]
 
 [params]
 
