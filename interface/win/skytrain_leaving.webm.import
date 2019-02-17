@@ -1,0 +1,14 @@
+[remap]
+
+importer="Webm"
+type="VideoStreamWebm"
+path="res://.import/skytrain_leaving.webm-9fd7c8196dfa5b51b5e6fc6f1933ef54.webmstr"
+
+[deps]
+
+source_file="res://interface/win/skytrain_leaving.webm"
+dest_files=[ "res://.import/skytrain_leaving.webm-9fd7c8196dfa5b51b5e6fc6f1933ef54.webmstr" ]
+
+[params]
+
+loop=true

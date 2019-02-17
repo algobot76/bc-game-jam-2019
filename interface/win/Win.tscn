@@ -1,4 +1,7 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://interface/win/Win.gd" type="Script" id=1]
+[ext_resource path="res://interface/win/skytrain_leaving.webm" type="VideoStream" id=2]
 
 [node name="Win" type="Control" index="0"]
 
@@ -13,6 +16,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
 
 [node name="VideoPlayer" type="VideoPlayer" parent="." index="0"]
@@ -28,7 +32,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 audio_track = 0
-stream = null
+stream = ExtResource( 2 )
 volume_db = 0.0
 autoplay = false
 paused = false
