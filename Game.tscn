@@ -73,4 +73,6 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="Pause" parent="PauseLayer" index="0" instance=ExtResource( 7 )]
 
+visible = false
+
 
