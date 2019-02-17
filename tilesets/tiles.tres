@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/floor_tall.png" type="Texture" id=3]
 [ext_resource path="res://assets/floor_yellow.png" type="Texture" id=4]
 [ext_resource path="res://assets/stairs_base_v1.png" type="Texture" id=5]
-[ext_resource path="res://pillar.png" type="Texture" id=6]
+[ext_resource path="res://assets/pillar.png" type="Texture" id=6]
 
 [resource]
 

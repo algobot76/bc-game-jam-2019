@@ -7,17 +7,17 @@
 [ext_resource path="res://guard/stronger_guard.gd" type="Script" id=5]
 [ext_resource path="res://Player.gd" type="Script" id=6]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
 "frames": [ ExtResource( 3 ) ],
@@ -26,12 +26,12 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Node" type="Node" index="0"]
+[node name="Game" type="Node" index="0"]
 
 _sections_unfolded = [ "Pause" ]
 __meta__ = {
@@ -68,14 +68,12 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Level_1" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 317.659, 107.829 )
-scale = Vector2( 0.645206, 0.646551 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
 [node name="walls" type="Node2D" parent="Level_1" index="1"]
 
 editor/display_folded = true
 visible = false
+position = Vector2( 317.659, 107.829 )
+scale = Vector2( 0.645206, 0.646551 )
 _sections_unfolded = [ "Material", "Visibility" ]
 
 [node name="wall6" type="StaticBody2D" parent="Level_1/walls" index="0"]
@@ -94,7 +92,7 @@ bounce = 0.0
 
 position = Vector2( -69.5153, -7.31786 )
 scale = Vector2( 4.27358, 3.78736 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Level_1/walls/wall6" index="1"]
 
@@ -120,7 +118,7 @@ bounce = 0.0
 
 position = Vector2( -69.5153, -7.31786 )
 scale = Vector2( 4.27358, 3.78736 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Level_1/walls/wall2" index="1"]
 
@@ -146,7 +144,7 @@ bounce = 0.0
 
 position = Vector2( -69.5153, -7.31786 )
 scale = Vector2( 4.27358, 3.78736 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Level_1/walls/wall5" index="1"]
 
@@ -171,7 +169,7 @@ bounce = 0.0
 
 position = Vector2( -69.5153, -7.31786 )
 scale = Vector2( 4.27358, 3.78736 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Level_1/walls/wall4" index="1"]
 
@@ -196,7 +194,7 @@ bounce = 0.0
 
 position = Vector2( -69.5153, -7.31786 )
 scale = Vector2( 4.27358, 3.78736 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Level_1/walls/wall4/wall3" index="1"]
 
@@ -222,7 +220,7 @@ bounce = 0.0
 
 position = Vector2( -69.5153, -7.31786 )
 scale = Vector2( 4.27358, 3.78736 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Level_1/walls/wall4/wall1" index="1"]
 
@@ -234,11 +232,13 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="guards" type="Node2D" parent="Level_1" index="2"]
 
-position = Vector2( 49.884, -23.4748 )
+editor/display_folded = true
+position = Vector2( 349.844, 92.6513 )
+scale = Vector2( 0.645206, 0.646551 )
 
 [node name="Guard" type="KinematicBody2D" parent="Level_1/guards" index="0"]
 
-position = Vector2( -98.74, 421.07 )
+position = Vector2( -702.852, 1614.02 )
 scale = Vector2( 1.13768, 1.13499 )
 input_pickable = false
 collision_layer = 1
@@ -253,7 +253,7 @@ __meta__ = {
 
 position = Vector2( -0.0893555, -0.772338 )
 scale = Vector2( 3, 3 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="Level_1/guards/Guard" index="1"]
@@ -262,7 +262,7 @@ texture = ExtResource( 3 )
 
 [node name="Guard2" type="KinematicBody2D" parent="Level_1/guards" index="1"]
 
-position = Vector2( 225.659, 424.418 )
+position = Vector2( 53.0557, 1751.34 )
 scale = Vector2( 1.15529, 1.26552 )
 input_pickable = false
 collision_layer = 1
@@ -277,7 +277,7 @@ __meta__ = {
 
 position = Vector2( -0.0893555, -1.06819 )
 scale = Vector2( 3.45913, 3.36594 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Level_1/guards/Guard2" index="1"]
 
@@ -285,8 +285,8 @@ texture = ExtResource( 3 )
 
 [node name="player" type="KinematicBody2D" parent="Level_1" index="3"]
 
-position = Vector2( 193.403, 195.249 )
-scale = Vector2( 1.36698, 1.35151 )
+position = Vector2( 164.032, 904.318 )
+scale = Vector2( 0.881984, 0.87382 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -301,14 +301,14 @@ __meta__ = {
 
 position = Vector2( -0.111938, 3.32474 )
 scale = Vector2( 1.27136, 1 )
-frames = SubResource( 1 )
+frames = SubResource( 3 )
 animation = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level_1/player" index="1"]
 
 position = Vector2( -1.465, 4.96029 )
 scale = Vector2( 4.20006, 3.62477 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="Level_1/player" index="2"]
 
