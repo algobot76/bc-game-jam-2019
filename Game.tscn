@@ -28,7 +28,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Player" parent="Level_1" index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 1484.26, 1656.93 )
+position = Vector2( 1495.18, 1621.43 )
 
 [node name="Guards" type="Node" parent="Level_1" index="2"]
 

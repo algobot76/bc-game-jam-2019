@@ -1,25 +1,26 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://characters/Player.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/player_base.png" type="Texture" id=2]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "walk",
+"name": "glow",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+radius = 17.273
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
-scale = Vector2( 0.881984, 0.87382 )
+position = Vector2( 3.22523, -1.78747 )
+scale = Vector2( 0.982773, 0.817962 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -32,15 +33,15 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-position = Vector2( -0.111938, 3.32474 )
-scale = Vector2( 1.27136, 1 )
+scale = Vector2( 0.917975, 0.955893 )
 frames = SubResource( 1 )
-animation = "walk"
+animation = "glow"
+_sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -1.465, 4.96029 )
-scale = Vector2( 4.20006, 3.62477 )
+position = Vector2( -5.16287, -1.39966 )
+scale = Vector2( 4.38448, 4.59037 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="." index="2"]
