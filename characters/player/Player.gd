@@ -12,7 +12,7 @@ var speed = 500
 var size = 10
 var invisibility = 100
 
-var knockback = 100
+var knockback = 175
 var knockback_duration = 0.3
 var knockback_direction = Vector2()
 
