@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://assets/floor_base_1_425*325.png" type="Texture" id=1]
+[ext_resource path="res://assets/floor_base_1.png" type="Texture" id=1]
+
 
 [node name="Floors" type="Node2D" index="0"]
 
