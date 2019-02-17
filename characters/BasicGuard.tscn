@@ -1,12 +1,35 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://characters/BasicGuard.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/guard_walk_1.png" type="Texture" id=1]
+[ext_resource path="res://assets/guard_walk_2.png" type="Texture" id=2]
+[ext_resource path="res://assets/guard_walk_3.png" type="Texture" id=3]
+[ext_resource path="res://assets/guard_walk_4.png" type="Texture" id=4]
+[ext_resource path="res://assets/guard_walk_5.png" type="Texture" id=5]
+[ext_resource path="res://assets/guard_run_1.png" type="Texture" id=6]
+[ext_resource path="res://assets/guard_run_2.png" type="Texture" id=7]
+[ext_resource path="res://assets/guard_run_3.png" type="Texture" id=8]
+[ext_resource path="res://assets/guard_run_4.png" type="Texture" id=9]
+[ext_resource path="res://assets/guard_run_5.png" type="Texture" id=10]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+radius = 10.0
+height = 32.7294
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "walk",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "run",
+"speed": 12.0
+} ]
 
 [node name="BasicGuard" type="KinematicBody2D"]
 
@@ -15,7 +38,6 @@ input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
-script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -23,13 +45,18 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( -0.0893555, -0.772338 )
-scale = Vector2( 3, 3 )
+position = Vector2( 4.52344, 17.3786 )
+scale = Vector2( 2.26432, 3.32843 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Sprite" type="Sprite" parent="." index="1"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
 
-texture = ExtResource( 2 )
+scale = Vector2( 0.6, 0.6 )
+frames = SubResource( 2 )
+animation = "walk"
+frame = 3
+playing = true
+_sections_unfolded = [ "Transform" ]
 
 

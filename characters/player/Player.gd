@@ -5,6 +5,7 @@ const R_MINUS = 1
 
 onready var utils = preload("res://Utils.gd")
 onready var paths = preload("res://Paths.gd")
+onready var timer = get_node(paths.TIMER)
 
 const WALK = 100
 const RUN = 250
@@ -20,7 +21,7 @@ var knockback_direction = Vector2()
 
 func _ready():
 	$Energy.connect('energy_changed', self, '_on_Energy_energy_changed')
-
+	timer.connect('timer_changed', self, '_on_Timer_timer_changed')
 
 func move():
 	if Input.is_key_pressed(KEY_D):
@@ -54,7 +55,6 @@ func _physics_process(delta):
 	if collision:
 		if collision.collider.is_in_group('Guards'):
 			knockback_direction = utils.cartesian_to_isometric((collision.collider.global_position - self.global_position).normalized())
-			print(knockback_direction.x, ',', knockback_direction.y)
 			$Tween.interpolate_property(self, 'position', position, position + knockback * -knockback_direction, knockback_duration, Tween.TRANS_QUAD, Tween.EASE_OUT)
 			$Tween.start()
 			$Energy.take_damage(1)
@@ -72,3 +72,6 @@ func eat(food):
 	self.speed += food.SPEED
 	$Energy.recover(food.LIFE)
 	
+
+func _on_Timer_timer_changed():
+	$Energy.take_damage(0.2)
