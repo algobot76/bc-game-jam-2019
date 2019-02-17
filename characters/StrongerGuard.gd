@@ -16,6 +16,8 @@ var cur_pos = null
 
 
 func chase(detect_range, distance):
+	$AnimatedSprite.play('run')
+
 	var p_pos_x = player.position.x
 	var self_pos_x = self.position.x
 	var p_pos_y = player.position.y
@@ -43,6 +45,8 @@ func chase(detect_range, distance):
 
 func patrol():
 	if cur_pos == null or cur_pos.distance_to(self.position) > PATROL_RANGE:
+		$AnimatedSprite.play('walk')
+
 		motion.y = rand_range(-1,1)
 		motion.x = rand_range(-1,1)
 		motion = motion.normalized() * WALK_SPEED

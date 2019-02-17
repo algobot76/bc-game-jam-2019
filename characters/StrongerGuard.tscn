@@ -1,12 +1,35 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://characters/StrongerGuard.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/guard_run_1.png" type="Texture" id=2]
+[ext_resource path="res://assets/guard_run_2.png" type="Texture" id=3]
+[ext_resource path="res://assets/guard_run_3.png" type="Texture" id=4]
+[ext_resource path="res://assets/guard_run_4.png" type="Texture" id=5]
+[ext_resource path="res://assets/guard_run_5.png" type="Texture" id=6]
+[ext_resource path="res://assets/guard_walk_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/guard_walk_2.png" type="Texture" id=8]
+[ext_resource path="res://assets/guard_walk_3.png" type="Texture" id=9]
+[ext_resource path="res://assets/guard_walk_4.png" type="Texture" id=10]
+[ext_resource path="res://assets/guard_walk_5.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 30.1236, 55.5723 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "run",
+"speed": 16.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "walk",
+"speed": 8.0
+} ]
 
 [node name="StrongerGuard" type="KinematicBody2D" index="0"]
 
@@ -27,8 +50,11 @@ position = Vector2( -0.0893555, -1.06819 )
 scale = Vector2( 3.45913, 3.36594 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="." index="1"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
 
-texture = ExtResource( 2 )
+frames = SubResource( 2 )
+animation = "walk"
+frame = 1
+playing = true
 
 
