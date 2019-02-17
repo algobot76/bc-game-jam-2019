@@ -8,7 +8,7 @@ onready var paths = preload("res://Paths.gd")
 onready var timer = get_node(paths.TIMER)
 
 var motion = Vector2()
-var speed = 150
+var speed = 500
 var size = 10
 var invisibility = 100
 
