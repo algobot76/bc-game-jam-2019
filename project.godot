@@ -11,6 +11,7 @@ config_version=3
 [application]
 
 config/name="BC Game Jam 2019"
+run/main_scene="res://Node.tscn"
 config/icon="res://icon.png"
 
 [rendering]
