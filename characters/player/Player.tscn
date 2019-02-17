@@ -21,11 +21,11 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 17.273
+radius = 15.8007
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
-position = Vector2( 0.211498, -43.9796 )
+position = Vector2( -3.37484, -44.8762 )
 scale = Vector2( 0.982773, 0.817962 )
 input_pickable = false
 collision_layer = 1
@@ -33,9 +33,6 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
@@ -43,13 +40,13 @@ position = Vector2( 7.15531, 2.45627 )
 scale = Vector2( 0.917975, 0.955893 )
 frames = SubResource( 1 )
 animation = "glow"
-frame = 3
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 7.10331, 118.958 )
+position = Vector2( 6.19102, 114.574 )
 scale = Vector2( 4.38448, 4.59037 )
 shape = SubResource( 2 )
 
@@ -82,5 +79,14 @@ editor_draw_drag_margin = false
 
 script = ExtResource( 8 )
 max_energy = 10
+
+[node name="Tween" type="Tween" parent="." index="4"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
 
 
