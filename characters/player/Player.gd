@@ -6,8 +6,11 @@ const R_MINUS = 1
 onready var utils = preload("res://Utils.gd")
 onready var paths = preload("res://Paths.gd")
 
+const WALK = 100
+const RUN = 250
+
 var motion = Vector2()
-var speed = 150
+var speed = WALK
 var size = 10
 var invisibility = 100
 
@@ -32,6 +35,11 @@ func move():
 		motion.y = 1
 	else:
 		motion.y = 0
+		
+	if Input.is_key_pressed(KEY_SHIFT):
+		speed = RUN
+	else:
+		speed = WALK
 
 	motion = motion.normalized() * speed
 

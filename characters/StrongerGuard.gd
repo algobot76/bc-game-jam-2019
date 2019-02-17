@@ -6,7 +6,7 @@ onready var player = get_node(paths.PLAYER)
 
 const RUN_SPEED = 130
 const WALK_SPEED = 60
-const RADIUS = 500
+const RADIUS = 200
 const CATCH = 80
 const PATROL_RANGE = 100
 
