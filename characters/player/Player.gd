@@ -1,8 +1,6 @@
 extends KinematicBody2D
 
 signal died
-
-const SPEED = 300
 const R_MINUS = 1
 
 onready var utils = preload("res://Utils.gd")
@@ -10,7 +8,7 @@ onready var paths = preload("res://Paths.gd")
 onready var timer = get_node(paths.TIMER)
 
 var motion = Vector2()
-var speed = 100
+var speed = 150
 var size = 10
 var invisibility = 100
 
@@ -36,7 +34,7 @@ func move():
 	else:
 		motion.y = 0
 
-	motion = motion.normalized() * SPEED
+	motion = motion.normalized() * speed
 
 	if is_on_wall():
 		motion.y = 0
@@ -52,7 +50,10 @@ func _physics_process(delta):
 			$Tween.interpolate_property(self, 'position', position, position + knockback * -knockback_direction, knockback_duration, Tween.TRANS_QUAD, Tween.EASE_OUT)
 			$Tween.start()
 			$Energy.take_damage(1)
+		elif collision.collider.get_parent().get_name() == 'Foods':
+			eat(collision.collider)
 
+			collision.collider.queue_free()
 
 func _on_Energy_energy_changed(energy):
 	if energy == 0:
@@ -61,3 +62,4 @@ func _on_Energy_energy_changed(energy):
 
 func _on_Timer_timer_changed():
 	$Energy.take_damage(0.2)
+
