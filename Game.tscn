@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://dialogs/GameOnver.tscn" type="PackedScene" id=1]
+[ext_resource path="res://levels/Level_1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://characters/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://characters/BasicGuard.tscn" type="PackedScene" id=4]
+[ext_resource path="res://characters/StrongerGuard.tscn" type="PackedScene" id=5]
+
+[node name="Game" type="Node" index="0"]
+
+_sections_unfolded = [ "Pause" ]
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="GameOver" parent="." index="0" instance=ExtResource( 1 )]
+
+visible = false
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 39.0
+margin_bottom = 39.0
+
+[node name="Level_1" parent="." index="1" instance=ExtResource( 2 )]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="Player" parent="Level_1" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 1495.18, 1621.43 )
+
+[node name="Guards" type="Node" parent="Level_1" index="2"]
+
+[node name="BasicGuard" parent="Level_1/Guards" index="0" instance=ExtResource( 4 )]
+
+position = Vector2( 1208.71, 1792.86 )
+
+[node name="StrongerGuard" parent="Level_1/Guards" index="1" instance=ExtResource( 5 )]
+
+position = Vector2( 1259.01, 1259.01 )
+
+

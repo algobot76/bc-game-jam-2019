@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/u-g-F92LU50.jpg-7774ba6f46f34544615fca71b6b19efd.stex"
+path="res://.import/pillar.png-b1bb7f0d83019ae69ac14eb27feb16b0.stex"
 
 [deps]
 
-source_file="res://u-g-F92LU50.jpg"
-dest_files=[ "res://.import/u-g-F92LU50.jpg-7774ba6f46f34544615fca71b6b19efd.stex" ]
+source_file="res://assets/pillar.png"
+dest_files=[ "res://.import/pillar.png-b1bb7f0d83019ae69ac14eb27feb16b0.stex" ]
 
 [params]
 
