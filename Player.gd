@@ -3,6 +3,7 @@ extends KinematicBody2D
 const SPEED = 300
 const R_MINUS = 1
 
+onready var util = preload("res://Utils.gd")
 var motion = Vector2()
 var speed = 100
 var size = 10
@@ -32,4 +33,4 @@ func move():
 
 func _physics_process(delta):
 	move()
-	motion = move_and_slide(motion)
+	motion = move_and_slide(util.cartesian_to_isometric(motion))

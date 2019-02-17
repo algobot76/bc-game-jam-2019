@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-onready var player = get_node('/root/Node/Level_1/Player')
-onready var vec_converter = preload("res://Utils.gd")
+onready var util = preload("res://Utils.gd")
+onready var player = get_node(util.PLAYER)
 const RUN_SPEED = 130
 const WALK_SPEED = 60
 const RADIUS = 150
@@ -23,20 +23,21 @@ func chase(detect_range, distance):
 		motion.x = 1
 	elif p_pos_x + buffer < self_pos_x:
 		motion.x = -1
+	else:
+		motion.x = 0
+		
 	if p_pos_y - buffer > self_pos_y:
 		motion.y = 1
 	elif p_pos_y + buffer < self_pos_y:
-		motion.y = -1		
+		motion.y = -1	
+	else:
+		motion.y = 0	
 	
 	motion = motion.normalized() * RUN_SPEED
 	
 	if is_on_wall():
 		motion.y = 0
 		motion.x = 0
-		
-	if abs(distance) <= CATCH:
-		get_tree().paused = true
-		get_node('/root/Node/GameOver').show()
 		
 func patrol():
 	if cur_pos == null or cur_pos.distance_to(self.position) > PATROL_RANGE:
@@ -53,6 +54,10 @@ func _physics_process(delta):
 		chase(detect_range, distance)
 	else:
 		patrol()
-	motion = move_and_slide(vec_converter.cartesian_to_isometric(motion))
+		
+	if abs(distance) <= CATCH:
+		get_tree().paused = true
+		get_node(util.GAME_OVER_PATH).show()
+	motion = move_and_slide(motion)
 		
 		
