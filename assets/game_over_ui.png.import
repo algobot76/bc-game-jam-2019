@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/game_over.jpg-470967beff0687d12fb106df784ff119.stex"
+path="res://.import/game_over_ui.png-10c699c44c774cc4de020a4ad0c06805.stex"
 
 [deps]
 
-source_file="res://assets/game_over.jpg"
-dest_files=[ "res://.import/game_over.jpg-470967beff0687d12fb106df784ff119.stex" ]
+source_file="res://assets/game_over_ui.png"
+dest_files=[ "res://.import/game_over_ui.png-10c699c44c774cc4de020a4ad0c06805.stex" ]
 
 [params]
 

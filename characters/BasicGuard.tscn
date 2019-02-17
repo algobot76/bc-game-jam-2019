@@ -32,7 +32,7 @@ animations = [ {
 "speed": 6.0
 } ]
 
-[node name="BasicGuard" type="KinematicBody2D" index="0"]
+[node name="BasicGuard" type="KinematicBody2D"]
 
 scale = Vector2( 1.13768, 1.13499 )
 input_pickable = false
@@ -57,7 +57,7 @@ _sections_unfolded = [ "Transform" ]
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 2 )
 animation = "walk"
-frame = 2
+frame = 3
 playing = true
 _sections_unfolded = [ "Transform" ]
 
