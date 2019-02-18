@@ -15,7 +15,7 @@ var speed = WALK
 var size = 10
 var invisibility = 100
 
-var knockback = 100
+var knockback = 175
 var knockback_duration = 0.3
 var knockback_direction = Vector2()
 
@@ -36,7 +36,7 @@ func move():
 		motion.y = 1
 	else:
 		motion.y = 0
-		
+
 	if Input.is_key_pressed(KEY_SHIFT):
 		speed = RUN
 	else:
@@ -60,8 +60,8 @@ func _physics_process(delta):
 			$Energy.take_damage(1)
 		elif collision.collider.get_parent().get_name() == 'Foods':
 			eat(collision.collider)
-			
-			collision.collider.queue_free() 
+
+			collision.collider.queue_free()
 
 func _on_Energy_energy_changed(energy):
 	if energy == 0:
@@ -71,7 +71,7 @@ func eat(food):
 	self.invisibility += food.INVISIBILITY
 	self.speed += food.SPEED
 	$Energy.recover(food.LIFE)
-	
+
 
 func _on_Timer_timer_changed():
 	$Energy.take_damage(0.2)
