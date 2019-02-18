@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://interface/win/Win.gd" type="Script" id=1]
-[ext_resource path="res://interface/win/skytrain_leaving.webm" type="VideoStream" id=2]
+[ext_resource path="res://interface/win/ending.webm" type="VideoStream" id=2]
 [ext_resource path="res://interface/win/VideoPlayer.gd" type="Script" id=3]
 
-[node name="Win" type="Control"]
+[node name="Win" type="Control" index="0"]
 
 pause_mode = 2
 anchor_left = 0.0
