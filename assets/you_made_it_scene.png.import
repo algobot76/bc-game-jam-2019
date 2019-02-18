@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/plaY_button_hover.png-730a7451a4c8714415611e09a9820df4.stex"
+path="res://.import/you_made_it_scene.png-fe9d458c674c50154c084bcb76523e27.stex"
 
 [deps]
 
-source_file="res://assets/plaY_button_hover.png"
-dest_files=[ "res://.import/plaY_button_hover.png-730a7451a4c8714415611e09a9820df4.stex" ]
+source_file="res://assets/you_made_it_scene.png"
+dest_files=[ "res://.import/you_made_it_scene.png-fe9d458c674c50154c084bcb76523e27.stex" ]
 
 [params]
 

@@ -11,7 +11,7 @@
 
 render_priority = 0
 
-[node name="StartMenu" type="Control" index="0"]
+[node name="StartMenu" type="Control"]
 
 material = SubResource( 1 )
 anchor_left = 0.0
